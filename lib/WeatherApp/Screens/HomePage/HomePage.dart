@@ -128,7 +128,7 @@ class _HomePageState extends State<HomePage> {
                       fit: BoxFit.cover)),
               child: SingleChildScrollView(
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0),
                   child: Column(
                     children: [
                       const SizedBox(height: 80),

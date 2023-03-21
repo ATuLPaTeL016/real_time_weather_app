@@ -70,49 +70,51 @@ class _AirPollutionWidgetState extends State<AirPollutionWidget> {
     return Scaffold(
       body: Obx(
         () => Container(
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(
-                    'assets/img/img_1.gif',
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(
+                      'assets/img/img_1.gif',
+                    ),
+                    fit: BoxFit.cover)),
+            child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Container(
+                          height: 350,
+                          decoration: BoxDecoration(
+                              color: Colors.black12,
+                              borderRadius: BorderRadius.circular(5)),
+                          child: Image.asset('assets/img/air.jpg',
+                              fit: BoxFit.cover)),
+                      buildAirPollutionWidget(),
+                      const SizedBox(height: 20),
+                      buildComponentsName(
+                          name: 'CO', value: '${_airPollutionController.co}'),
+                      const Divider(color: Colors.black54),
+                      buildComponentsName(
+                          name: 'NO', value: '${_airPollutionController.no}'),
+                      const Divider(color: Colors.black54),
+                      buildComponentsName(
+                          name: 'NO2', value: '${_airPollutionController.no2}'),
+                      const Divider(color: Colors.black54),
+                      buildComponentsName(
+                          name: 'O3', value: '${_airPollutionController.o3}'),
+                      const Divider(color: Colors.black54),
+                      buildComponentsName(
+                          name: 'SO2', value: '${_airPollutionController.so2}'),
+                      const Divider(color: Colors.black54),
+                      buildComponentsName(
+                          name: 'NH3', value: '${_airPollutionController.nh3}'),
+                      const Divider(color: Colors.black54),
+                      buildComponentsName(
+                          name: 'PM10',
+                          value: '${_airPollutionController.pm10}'),
+                      const SizedBox(height: 20),
+                    ],
                   ),
-                  fit: BoxFit.cover)),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                    height: 350,
-                    decoration: BoxDecoration(
-                        color: Colors.black12,
-                        borderRadius: BorderRadius.circular(5)),
-                    child:
-                        Image.asset('assets/img/air.jpg', fit: BoxFit.cover)),
-                buildAirPollutionWidget(),
-                const SizedBox(height: 20),
-                buildComponentsName(
-                    name: 'CO', value: '${_airPollutionController.co}'),
-                const Divider(color: Colors.black54),
-                buildComponentsName(
-                    name: 'NO', value: '${_airPollutionController.no}'),
-                const Divider(color: Colors.black54),
-                buildComponentsName(
-                    name: 'NO2', value: '${_airPollutionController.no2}'),
-                const Divider(color: Colors.black54),
-                buildComponentsName(
-                    name: 'O3', value: '${_airPollutionController.o3}'),
-                const Divider(color: Colors.black54),
-                buildComponentsName(
-                    name: 'SO2', value: '${_airPollutionController.so2}'),
-                const Divider(color: Colors.black54),
-                buildComponentsName(
-                    name: 'NH3', value: '${_airPollutionController.nh3}'),
-                const Divider(color: Colors.black54),
-                buildComponentsName(
-                    name: 'PM10', value: '${_airPollutionController.pm10}'),
-                const SizedBox(height: 20),
-              ],
-            ),
-          ),
-        ),
+                ))),
       ),
     );
   }
